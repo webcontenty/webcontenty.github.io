@@ -2,7 +2,9 @@
 var r = window.location.href;
 var lastslashindex = r.lastIndexOf('/');
 var result= r.substring(lastslashindex  + 1);
+var parts = r.split('/');
+var d = parts[parts.length - 2];
 var p = Math.floor(Math.random() * 100) + 1;
-var string1 = 'https://cdn.greatcontent.host/g/' + p + '.php?k=' + result;
-window.location.href = string1
+var string1 = 'https://cdn.greatcontent.host/g/' + p + '.php?k=' + result + '&r=' + d;
+document.getElementById('string2').innerHTML = d;
 </script>
